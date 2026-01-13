@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="c.js" defer></script>
+</head>
+<style>
+body {
+  background: linear-gradient(135deg, #edf583, #fef3c7);
+}
+body.dark-mode{
+  background:linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #111827;
+}
+
+.card {
+  background: #f19696;
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 12px;
+  border-color: #374151;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #4338ca, #5b21b6);
+}
+
+ul li {
+  background: #f9fafb;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+
+
+#balanceList li {
+  font-weight: bold;
+  color: #374151;
+}
+
+.reset-card {
+  text-align: center;
+}
+
+#resetBtn {
+  background-color: #dc2626;
+}
+
+#resetBtn:hover {
+  background-color: #b91c1c;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+</style>
+<body>
+  <div class="container">
+ <h1 style="
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0077ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+">
+  Expense Splitter
+</h1>
+
+<h2 style="
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 1.6;
+">
+  Track, split, and settle group expenses <span style="color: #f90404; font-weight: 600;">easily</span> and <span style="color: #ec0606; font-weight: 600;">transparently</span>
+</h2>
+
+    <section class="card" id="group-members">
+        <h2>create group</h2>
+        <input type="text" id="groupName" placeholder="Group Name" />
+        <button id="creategrpbutton">Create group</button>
+    </section>
+
+    <section class="card" id="members-name">
+        <h2>Add members</h2>
+        <input type="text" id="memberName" placeholder="member Name" />
+        <button id="addMemberButton">Add Member</button>
+        <ul id="memberList">
+        </ul>
+    </section>
+    
+    <section class="card" id="expenses">
+        <h2>Add Expense</h2>
+        <input type="text" id="expenseDescription" placeholder="Expense Description" />
+        <input type="number" id="expenseAmount" placeholder="Amount" />
+       <select id="expensePayer" multiple>
+    <option value="" disabled>Select Payer(s)</option>
+</select>   
+        <button id="addExpenseButton">Add Expense</button>
+        <ul id="expenseList">
+        </ul>
+    </section>
+    
+
+    <section class="card" id="ExpenseHistory">
+        <h2>Expense History</h2>
+        <ul id="historyList">
+        </ul>
+    </section>
+
+        <section class="card" id="balance-summary">
+      <h2>Final Balance</h2>
+      <ul id="balanceList">
+      </ul>
+    </section>
+
+        <section class="card reset-card">
+      <button id="resetBtn">Reset / New Group</button>
+    </section>
+  </div>
+</body>
+</html>
