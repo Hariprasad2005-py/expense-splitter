@@ -28,7 +28,6 @@ function createGroup() {
     document.getElementById('expensePayer').innerHTML =
         '<option value="" disabled>Select Payer(s)</option>';
 
-    groupNameInput.value = "";
 }
 
 function addMember() {
