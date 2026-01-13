@@ -21,6 +21,8 @@ function createGroup() {
     group.expenses = [];
     group.balances = {};
 
+    document.getElementById('currentGroup').textContent = "Current Group: " + groupName;
+
     document.getElementById('memberList').innerHTML = "";
     document.getElementById('expenseList').innerHTML = "";
     document.getElementById('historyList').innerHTML = "";
@@ -198,6 +200,8 @@ function resetGroup() {
     document.getElementById('expenseList').innerHTML = "";
     document.getElementById('historyList').innerHTML = "";
     document.getElementById('balanceList').innerHTML = "";
+
+    document.getElementById('currentGroup').textContent = "";
 }
 
 function formatCurrency(amount) {
