@@ -14,14 +14,20 @@ function createGroup() {
         return;
     }
 
+    // Show pop-up
     alert("Group " + groupName + " created successfully");
 
+    // Store group info
     group.name = groupName;
     group.members = [];
     group.expenses = [];
     group.balances = {};
 
+    // Display current group
     document.getElementById('currentGroup').textContent = "Current Group: " + groupName;
+
+    // Do NOT clear the group name input
+    // document.getElementById('groupName').value = "";  <-- Remove this line
 
     document.getElementById('memberList').innerHTML = "";
     document.getElementById('expenseList').innerHTML = "";
@@ -29,8 +35,8 @@ function createGroup() {
     document.getElementById('balanceList').innerHTML = "";
     document.getElementById('expensePayer').innerHTML =
         '<option value="" disabled>Select Payer(s)</option>';
-
 }
+
 
 function addMember() {
     const memberInput = document.getElementById('memberName');
